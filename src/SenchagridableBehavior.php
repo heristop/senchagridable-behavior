@@ -126,33 +126,34 @@ public function addGridFiltersQuery(\$params)
                     } break;
                 }
                 case 'date': {
+                
                     switch (\$filter[\$j]['data']['comparison']) {
                         case 'ne': {
                             \$this->condition(
                                 \"cond\$i\",
                                 '$objectClassName.'.ucfirst(\$filter[\$j]['field']).' != ?',
-                                \"'\".date('Y-m-d', strtotime(\$filter[\$j]['data']['value'])).\"'\"
+                                date('Y-m-d', strtotime(\$filter[\$j]['data']['value']))
                             ); break;
                         }
                         case 'eq': {
                             \$this->condition(
                                 \"cond\$i\",
                                 '$objectClassName.'.ucfirst(\$filter[\$j]['field']).' = ?',
-                                \"'\".date('Y-m-d', strtotime(\$filter[\$j]['data']['value'])).\"'\"
+                                date('Y-m-d', strtotime(\$filter[\$j]['data']['value']))
                             ); break;
                         }
                         case 'lt': {
                             \$this->condition(
                                 \"cond\$i\",
                                 '$objectClassName.'.ucfirst(\$filter[\$j]['field']).' < ?',
-                                \"'\".date('Y-m-d', strtotime(\$filter[\$j]['data']['value'])).\"'\"
+                                date('Y-m-d', strtotime(\$filter[\$j]['data']['value']))
                             ); break;
                         }
                         case 'gt': {
                             \$this->condition(
                                 \"cond\$i\",
                                 '$objectClassName.'.ucfirst(\$filter[\$j]['field']).' > ?',
-                                \"'\".date('Y-m-d', strtotime(\$filtrer[\$j]['data']['value'])).\"'\"
+                                date('Y-m-d', strtotime(\$filtrer[\$j]['data']['value']))
                             ); break;
                         }
                     }
