@@ -40,7 +40,7 @@ public function addGridSortQuery(\$params)
 public function addGridFiltersQuery(\$params)
 {
     \$i = 0;
-    \$fields = json_decode(\$params->get('fields'));
+    \$fields = \$this->getFields(\$params);
     if (!empty(\$fields)) {
         \$orConds = array();
         foreach (\$fields as \$field) {
@@ -57,7 +57,7 @@ public function addGridFiltersQuery(\$params)
         \$this->where(\$orConds, 'or');
     }
     
-    \$filter = \$params->get('filter');
+    \$filter = \$this->getFilter(\$params);
     if (!empty(\$filter)) {
         \$andConds = array();
         \$count = count(\$filter);
@@ -167,6 +167,27 @@ public function addGridFiltersQuery(\$params)
     
     return \$this;
 }
+
+/**
+ * Get fields from request
+ *
+ * @param Symfony\Component\HttpFoundation\ParameterBag $params
+ * @return array
+ */
+protected function getFields(\$params) {
+    return json_decode(\$params->get('fields'));
+}
+
+/**
+ * Get filter from request
+ *
+ * @param Symfony\Component\HttpFoundation\ParameterBag $params
+ * @return array
+ */
+protected function getFilter(\$params) {
+    return \$params->get('filter');
+}
+
         ";
     }
 
