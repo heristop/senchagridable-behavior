@@ -1,5 +1,5 @@
 {
-    "name": "heristop/SenchagridableBehavior",
+    "name": "heristop/propel-senchagridable-behavior",
     "description": "Propel behavior to automatically add filters for Sencha / ExtJS grids",
     "keywords": [ "propel", "behavior", "extjs", "sencha", "filter", "grid" ],
     "license": "MIT",

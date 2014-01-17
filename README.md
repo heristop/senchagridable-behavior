@@ -6,7 +6,19 @@ Installation
 
 Download the SenchagridableBehavior.php file in src/, put it somewhere on your project, then add the following line to your propel.ini:
 
+``` ini
 propel.behavior.senchagridable.class = path.to.SenchagridableBehavior
+```
+
+Or use composer adding the requirement below:
+
+``` js
+{
+    "require": {
+        "heristop/propel-senchagridable-behavior": "*"
+    }
+}
+```
 
 Usage
 -----
