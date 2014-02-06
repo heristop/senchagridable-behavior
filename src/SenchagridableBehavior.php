@@ -13,6 +13,23 @@ class SenchagridableBehavior extends Behavior
         
         return "
 /**
+ * Paginate results
+ *
+ * @param Symfony\Component\HttpFoundation\ParameterBag $params
+ * @return $queryClassName
+ */
+public function paginateGrid(\$params)
+{
+    return \$this
+        ->addGridFiltersQuery(\$params)
+        ->addGridSortQuery(\$params)
+        ->paginate(
+            \$param->get('page'),
+            \$param->get('limit')
+        );
+}
+
+/**
  * Added sort filter on query
  *
  * @param Symfony\Component\HttpFoundation\ParameterBag $params

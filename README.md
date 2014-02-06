@@ -32,8 +32,14 @@ Add this line to your schema.xml:
 The Behavior will add several methods to the Query class:
 
 ``` php
+public function paginateGrid($params)
 public function addGridSortQuery($params)
 public function addGridFiltersQuery($params)
 ```
 
-The variable $params contains the parameters retrieved from the request.
+The variable $params contains the parameters retrieved from the request:
+
+``` php
+$request = $this->get('request');
+$posts = PostQuery::create()->paginateGrid($request->query);
+```
