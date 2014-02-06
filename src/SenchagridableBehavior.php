@@ -24,8 +24,8 @@ public function paginateGrid(\$params)
         ->addGridFiltersQuery(\$params)
         ->addGridSortQuery(\$params)
         ->paginate(
-            \$param->get('page'),
-            \$param->get('limit')
+            \$params->get('page'),
+            \$params->get('limit')
         );
 }
 
